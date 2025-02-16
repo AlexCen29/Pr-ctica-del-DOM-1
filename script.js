@@ -11,8 +11,8 @@ document.getElementById("ordenar").addEventListener("click", function(event) {
 });
 
 function subirImagen() {
-    var urlImagen = document.getElementById("URL").value;
-    var descripcion = document.getElementById("descripcion").value;
+    var urlImagen = document.getElementById("URL").value.trim();
+    var descripcion = document.getElementById("descripcion").value.trim();
 
 
 
@@ -84,8 +84,8 @@ function ordenarImagenes(){
     var imagenesArray = Array.from(imagenes);
 
     imagenesArray.sort(function(a, b) {
-        var descripcionA = a.getElementsByClassName("card-text")[0].innerHTML;
-        var descripcionB = b.getElementsByClassName("card-text")[0].innerHTML;
+        var descripcionA = a.getElementsByClassName("card-text")[0].innerHTML.charAt(0);
+        var descripcionB = b.getElementsByClassName("card-text")[0].innerHTML.charAt(0);
 
         if (descripcionA < descripcionB) {
             return -1;
